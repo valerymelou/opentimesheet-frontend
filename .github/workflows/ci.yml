@@ -10,7 +10,7 @@ on:
     paths-ignore: [ "docs/**" ]
 
 jobs:
-  build:
+  lint:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -30,10 +30,27 @@ jobs:
       - name: Lint
         run: npm run lint
 
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Node ${{ matrix.node }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Install dependencies
+        run: npm install --force
+
       - name: Unit Tests
         uses: GabrielBB/xvfb-action@v1
         with:
-          run: npm run test --no-watch --no-progress --code-coverage
+          run: npm run test
 
       - name: Upload coverage
         uses: codecov/codecov-action@v1

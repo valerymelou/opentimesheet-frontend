@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [ "master", "develop" ]
+    paths-ignore: [ "docs/**" ]
+
+  push:
+    branches: [ "master", "develop" ]
+    paths-ignore: [ "docs/**" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Node $
+        uses: actions/setup-node@v2
+        with:
+          node-version: $
+
+      - name: gabrielbb/xvfb-action
+        uses: GabrielBB/xvfb-action@v1
+
+      - name: Install dependencies
+        run: npm install --force
+
+      - name: Lint
+        run: npm run Lint
+
+      - name: Unit Tests
+        run: npm run test --no-watch --no-progress --code-coverage
+
+      - name: "Upload coverage"
+        uses: codecov/codecov-action@v1
+        with:
+          fail_ci_if_error: true

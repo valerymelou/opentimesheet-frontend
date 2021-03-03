@@ -28,7 +28,7 @@ jobs:
         run: npm install --force
 
       - name: Lint
-        run: npm run Lint
+        run: npm run lint
 
       - name: Unit Tests
         uses: GabrielBB/xvfb-action@v1

@@ -24,9 +24,6 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
 
-      - name: Chrome Headless
-        uses: GabrielBB/xvfb-action@v1
-
       - name: Install dependencies
         run: npm install --force
 
@@ -34,7 +31,9 @@ jobs:
         run: npm run Lint
 
       - name: Unit Tests
-        run: npm run test --no-watch --no-progress --code-coverage
+        uses: GabrielBB/xvfb-action@v1
+        with:
+          run: npm run test --no-watch --no-progress --code-coverage
 
       - name: Upload coverage
         uses: codecov/codecov-action@v1

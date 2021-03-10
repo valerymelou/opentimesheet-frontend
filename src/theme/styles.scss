@@ -1,0 +1,43 @@
+
+@import "core";
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core($opentimesheet-typography);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($opentimesheet-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+@import "grid";
+@import "forms";
+
+* {
+  box-sizing: border-box;
+}
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  color: #333;
+}
+
+a {
+  display: inline-block;
+  color: mat-color($opentimesheet-primary);
+  transition: all .3s ease-in-out;
+
+  &:hover,
+  &:focus {
+    color: mat-color($opentimesheet-primary, A400);
+  }
+}
+
+img {
+  max-width: 100%;
+}

@@ -3,7 +3,7 @@
 Angular powered frontend of Open Timesheet.
 
 [![CI](https://github.com/valerymelou/opentimesheet-frontend/actions/workflows/ci.yml/badge.svg?branch=develop)](https://github.com/valerymelou/opentimesheet-frontend/actions/workflows/ci.yml)
-[![codecov](https://codecov.io/gh/valerymelou/opentimesheet-frontend/branch/master/graph/badge.svg?token=6G1EYRELB0)](https://codecov.io/gh/valerymelou/opentimesheet-frontend)
+[![codecov](https://codecov.io/gh/valerymelou/opentimesheet-frontend/branch/develop/graph/badge.svg?token=6G1EYRELB0)](https://codecov.io/gh/valerymelou/opentimesheet-frontend)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.2.
 

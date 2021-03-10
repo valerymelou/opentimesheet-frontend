@@ -1,0 +1,39 @@
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+
+.column {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100%;
+}
+
+.column-4 {
+  @extend .column;
+
+  @media (min-width: $default-breakpoint) {
+    width: 33.33333%;
+  }
+}
+
+.column-8 {
+  @extend .column;
+
+  @media (min-width: $default-breakpoint) {
+    width: 66.66666%;
+  }
+}
+
+.no-padding {
+  padding-left: 0;
+  padding-right: 0;
+}

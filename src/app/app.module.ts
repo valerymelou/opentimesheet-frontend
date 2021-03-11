@@ -1,3 +1,4 @@
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -8,6 +9,8 @@ import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
 import { OrgModule } from './org/org.module';
 import { SharedModule } from './shared/shared.module';
+import { HttpBaseUrlInterceptor } from './core/http/http-base-url.interceptor';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,9 @@ import { SharedModule } from './shared/shared.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     AuthModule,
+    CoreModule,
     OrgModule,
     SharedModule
   ],
@@ -25,6 +30,11 @@ import { SharedModule } from './shared/shared.module';
     {
       provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
       useValue: { appearance: 'outline' }
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpBaseUrlInterceptor,
+      multi: true
     }
   ],
   bootstrap: [AppComponent]

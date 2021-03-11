@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { IndexComponent } from './org/index/index.component';
+import { OrgResolverService } from './org/org-resolver.service';
 import { StartComponent } from './org/start/start.component';
 
 const routes: Routes = [
@@ -17,6 +18,9 @@ const routes: Routes = [
   {
     path: ':slug',
     component: IndexComponent,
+    resolve: {
+      org: OrgResolverService
+    },
     children: [
       {
         path: 'login',

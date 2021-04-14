@@ -25,6 +25,10 @@ const routes: Routes = [
       {
         path: 'login',
         component: LoginComponent
+      },
+      {
+        path: 'time-track',
+        loadChildren: () => import('./time-track/time-track-routing.module').then(m => m.TimeTrackRoutingModule)
       }
     ]
   }

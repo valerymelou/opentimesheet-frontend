@@ -1,3 +1,12 @@
+.form-errors {
+  margin-bottom: 1rem;
+  color: mat-color($mat-red, A700);
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
 .form-group {
   display: flex;
   justify-content: space-between;

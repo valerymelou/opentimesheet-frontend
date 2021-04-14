@@ -11,6 +11,7 @@ import { OrgModule } from './org/org.module';
 import { SharedModule } from './shared/shared.module';
 import { HttpBaseUrlInterceptor } from './core/http/http-base-url.interceptor';
 import { CoreModule } from './core/core.module';
+import { HttpBaseHeadersInterceptor } from './core/http/http-base-headers.interceptor';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,11 @@ import { CoreModule } from './core/core.module';
     {
       provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
       useValue: { appearance: 'outline' }
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpBaseHeadersInterceptor,
+      multi: true
     },
     {
       provide: HTTP_INTERCEPTORS,

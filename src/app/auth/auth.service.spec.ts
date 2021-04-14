@@ -55,12 +55,12 @@ describe('AuthService', () => {
 
   it('should not authenticate', () => {
     const testData = {
-      errors:[
+      errors: [
         {
-          detail: "No active account found with the given credentials",
-          status:"401",
-          source:{"pointer":"/data"},
-          code:"no_active_account"
+          detail: 'No active account found with the given credentials',
+          status: '401',
+          source: {pointer: '/data'},
+          code: 'no_active_account'
         }
       ]
     };
@@ -70,7 +70,7 @@ describe('AuthService', () => {
 
     service.authenticate(credentials).subscribe(() => {
     }, errors => {
-      expect(errors.length).toEqual(1)
+      expect(errors.length).toEqual(1);
     });
 
     const req = httpTestingController.expectOne('/auth/token');

@@ -9,7 +9,6 @@ export class BaseService {
 
     if (error.error instanceof ErrorEvent) {
       // A client-side or network error occurred. Handle it accordingly.
-      console.error('An error occurred:', error);
       const httpError = new HttpError('', error.error.message, '0');
       httpErrors.push(httpError);
     } else {

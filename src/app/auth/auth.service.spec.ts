@@ -53,6 +53,33 @@ describe('AuthService', () => {
     httpTestingController.verify();
   });
 
+  it('should not authenticate', () => {
+    const testData = {
+      errors:[
+        {
+          detail: "No active account found with the given credentials",
+          status:"401",
+          source:{"pointer":"/data"},
+          code:"no_active_account"
+        }
+      ]
+    };
+    const credentials = new Credentials();
+    credentials.email = 'test@opentimesheet.io';
+    credentials.password = 'wrongpassword';
+
+    service.authenticate(credentials).subscribe(() => {
+    }, errors => {
+      expect(errors.length).toEqual(1)
+    });
+
+    const req = httpTestingController.expectOne('/auth/token');
+    expect(req.request.method).toEqual('POST');
+
+    req.flush(testData, {status: 401, statusText: 'Unauthorized'});
+    httpTestingController.verify();
+  });
+
   it('should log in with a valid access token', () => {
     const token = new Token();
     token.access = sampleToken;

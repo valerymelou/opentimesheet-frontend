@@ -4,9 +4,12 @@
 
 export const environment = {
   production: false,
+  apiContentType: 'application/vnd.api+json',
   apiRoot: 'http://localhost:8000',
   apiOrgPrefix: 'o',
-  apiVersion: 'v1'
+  apiVersion: 'v1',
+  tokenKey: 'token',
+  refreshTokenKey: 'refreshToken'
 };
 
 /*

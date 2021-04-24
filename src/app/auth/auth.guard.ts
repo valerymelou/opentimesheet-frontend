@@ -12,7 +12,7 @@ export class AuthGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      if (state.url.includes('/login') || this.auth.isFullyAuthenticated()) {
+      if (this.auth.isFullyAuthenticated()) {
         // Authentication not required for login route
         return true;
       }

@@ -36,15 +36,6 @@ describe('AuthGuard', () => {
     expect(guard).toBeTruthy();
   });
 
-  it('canActivate should return true for login page', () => {
-    const route = {} as ActivatedRouteSnapshot;
-    const state = {
-      url: '/opentimesheet/login'
-    } as RouterStateSnapshot;
-
-    expect(guard.canActivate(route, state)).toBe(true);
-  });
-
   it('canActivate should return true if fully authenticated', () => {
     const route = {} as ActivatedRouteSnapshot;
     const state = {

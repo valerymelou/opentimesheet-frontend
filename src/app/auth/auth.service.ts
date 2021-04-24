@@ -82,7 +82,7 @@ export class AuthService extends BaseService {
     return true;
   }
 
-  private initSession(accessToken?: string, refreshToken?: string): boolean {
+  initSession(accessToken?: string, refreshToken?: string): boolean {
     // Load the tokens from the storage if not provided.
     const access = accessToken || this.storage.getItem(environment.tokenKey);
     const refresh = refreshToken || this.storage.getItem(environment.refreshTokenKey);

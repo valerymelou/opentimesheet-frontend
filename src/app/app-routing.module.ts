@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './auth/auth.guard';
 import { LoginComponent } from './auth/login/login.component';
 import { IndexComponent } from './org/index/index.component';
 import { OrgResolverService } from './org/org-resolver.service';
@@ -18,6 +19,7 @@ const routes: Routes = [
   {
     path: ':slug',
     component: IndexComponent,
+    canActivate: [AuthGuard],
     resolve: {
       org: OrgResolverService
     },

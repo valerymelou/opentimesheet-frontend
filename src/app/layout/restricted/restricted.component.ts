@@ -7,6 +7,7 @@ import { OrgService } from 'src/app/org/org.service';
   templateUrl: './restricted.component.html'
 })
 export class RestrictedComponent implements OnInit {
+  sidenavCollapsed = false;
 
   constructor(private route: ActivatedRoute, private orgService: OrgService) { }
 
@@ -14,5 +15,9 @@ export class RestrictedComponent implements OnInit {
     this.route.data.subscribe(data => {
       this.orgService.setCurrentOrgCode(data.org);
     });
+  }
+
+  toggleSidenav(): void {
+    this.sidenavCollapsed = !this.sidenavCollapsed;
   }
 }

@@ -40,7 +40,7 @@ const routes: Routes = [
     children: [
       {
         path: 'time-track',
-        loadChildren: () => import('./time-track/time-track-routing.module').then(m => m.TimeTrackRoutingModule)
+        loadChildren: () => import('./time-track/time-track.module' ).then(m => m.TimeTrackModule)
       }
     ]
   },

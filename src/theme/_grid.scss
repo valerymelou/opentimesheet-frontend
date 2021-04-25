@@ -1,7 +1,13 @@
-.container {
+.container-fluid {
   width: 100%;
   margin: 0 auto;
   padding: 0 1rem;
+}
+
+.container {
+  @extend .container-fluid;
+
+  max-width: 1280px;
 }
 
 .row {

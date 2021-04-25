@@ -1,9 +1,19 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 import { RestrictedComponent } from './restricted.component';
+
+@Component({selector: 'app-navbar', template: ''})
+class NavbarStubComponent {}
+
+@Component({selector: 'app-sidenav', template: ''})
+class SidenavStubComponent {
+  @Input() collapsed = false;
+}
 
 describe('RestrictedComponent', () => {
   let component: RestrictedComponent;
@@ -11,10 +21,16 @@ describe('RestrictedComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RestrictedComponent ],
+      declarations: [
+        RestrictedComponent,
+        NavbarStubComponent,
+        SidenavStubComponent
+      ],
       imports: [
         HttpClientTestingModule,
-        RouterTestingModule
+        NoopAnimationsModule,
+        RouterTestingModule,
+        SharedModule
       ]
     })
     .compileComponents();
@@ -28,5 +44,13 @@ describe('RestrictedComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should toggle the side nav', () => {
+    expect(component.sidenavCollapsed).toBe(false);
+
+    component.toggleSidenav();
+
+    expect(component.sidenavCollapsed).toBe(true);
   });
 });

@@ -2,15 +2,15 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
-import { IndexComponent } from './index.component';
+import { UnrestrictedComponent } from './unrestricted.component';
 
-describe('IndexComponent', () => {
-  let component: IndexComponent;
-  let fixture: ComponentFixture<IndexComponent>;
+describe('UnrestrictedComponent', () => {
+  let component: UnrestrictedComponent;
+  let fixture: ComponentFixture<UnrestrictedComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ IndexComponent ],
+      declarations: [ UnrestrictedComponent ],
       imports: [
         HttpClientTestingModule,
         RouterTestingModule
@@ -20,7 +20,7 @@ describe('IndexComponent', () => {
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(IndexComponent);
+    fixture = TestBed.createComponent(UnrestrictedComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

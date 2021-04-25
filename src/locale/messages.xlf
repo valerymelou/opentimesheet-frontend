@@ -45,6 +45,62 @@
           <context context-type="linenumber">32</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="7940596185168853844" datatype="html">
+        <source>Collapse menu</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/layout/navbar/navbar.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4930506384627295710" datatype="html">
+        <source>Settings</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/layout/navbar/navbar.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8258325324649507024" datatype="html">
+        <source>My profile</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/layout/navbar/navbar.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3797778920049399855" datatype="html">
+        <source>Logout</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/layout/navbar/navbar.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6980438418425469125" datatype="html">
+        <source>Time-Track</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/layout/sidenav/sidenav.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8215289324643742205" datatype="html">
+        <source>Tasks &amp; projects</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/layout/sidenav/sidenav.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1868606282505332204" datatype="html">
+        <source>Reports</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/layout/sidenav/sidenav.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4555457172864212828" datatype="html">
+        <source>Users</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/layout/sidenav/sidenav.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="6325331886855891596" datatype="html">
         <source>Start using Open Timesheet today</source>
         <context-group purpose="location">

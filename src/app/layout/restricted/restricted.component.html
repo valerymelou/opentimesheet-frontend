@@ -1,0 +1,14 @@
+<app-navbar (collapse)="toggleSidenav()"></app-navbar>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" opened class="example-sidenav"
+               [fixedInViewport]="true" [fixedTopGap]="64"
+               [fixedBottomGap]="0">
+    <app-sidenav [collapsed]="sidenavCollapsed"></app-sidenav>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div class="container-fluid">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

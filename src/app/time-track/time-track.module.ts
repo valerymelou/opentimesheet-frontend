@@ -1,15 +1,15 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 
 import { TimeTrackRoutingModule } from './time-track-routing.module';
 import { FillComponent } from './fill/fill.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
   declarations: [FillComponent],
   imports: [
-    CommonModule,
-    TimeTrackRoutingModule
-  ]
+    TimeTrackRoutingModule,
+    SharedModule
+  ],
 })
 export class TimeTrackModule { }

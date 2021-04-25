@@ -1,6 +1,12 @@
+import { Component, Input } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FillComponent } from './fill.component';
+
+@Component({selector: 'app-title', template: ''})
+class TitleStubComponent {
+  @Input() title = '';
+}
 
 describe('FillComponent', () => {
   let component: FillComponent;
@@ -8,7 +14,7 @@ describe('FillComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FillComponent ]
+      declarations: [ FillComponent, TitleStubComponent ]
     })
     .compileComponents();
   });

@@ -12,6 +12,7 @@ import { SharedModule } from './shared/shared.module';
 import { HttpBaseUrlInterceptor } from './core/http/http-base-url.interceptor';
 import { CoreModule } from './core/core.module';
 import { HttpBaseHeadersInterceptor } from './core/http/http-base-headers.interceptor';
+import { LayoutModule } from './layout/layout.module';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { HttpBaseHeadersInterceptor } from './core/http/http-base-headers.interc
     AuthModule,
     CoreModule,
     OrgModule,
+    LayoutModule,
     SharedModule
   ],
   providers: [

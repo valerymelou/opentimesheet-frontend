@@ -23,9 +23,9 @@ $opentimesheet-theme: mat-light-theme((
 ));
 
 $opentimesheet-typography: mat-typography-config(
-  $font-family: 'Roboto, monospace',
-  $headline: mat-typography-level(32px, 48px, 700),
-  $body-1: mat-typography-level(16px, 24px, 500)
+  $font-family: 'Open Sans, monospace',
+  $headline: mat-typography-level(32px, 48px, 800),
+  $body-1: mat-typography-level(16px, 24px, 400)
 );
 
 $default-breakpoint: 1023px;

@@ -24,3 +24,12 @@
 .sidenav-container {
   flex: 1;
 }
+
+mat-sidenav {
+  box-shadow: .125rem 0 .25rem rgba(0,0,0,.075);
+  border: none;
+}
+
+.mat-drawer-container {
+  background-color: white;
+}

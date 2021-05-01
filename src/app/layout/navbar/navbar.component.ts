@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
@@ -7,7 +7,8 @@ import { AuthService } from 'src/app/auth/auth.service';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  @Output() collapse = new EventEmitter();
+  @Input() isMobile = false;
+  @Output() toggle = new EventEmitter();
 
   constructor(private auth: AuthService) { }
 
@@ -15,7 +16,7 @@ export class NavbarComponent implements OnInit {
   }
 
   toggleMenu(): void {
-    this.collapse.emit();
+    this.toggle.emit();
   }
 
   logout(): void {

@@ -1,0 +1,26 @@
+@import "src/theme/core";
+
+.content {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-top: $navbar-height;
+
+  &.is-mobile {
+    padding-top: 0;
+  }
+}
+
+.is-mobile {
+  .sidenav-container {
+    flex: 1 0 auto;
+  }
+}
+
+.sidenav-container {
+  flex: 1;
+}

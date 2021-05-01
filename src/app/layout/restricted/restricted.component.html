@@ -1,14 +1,16 @@
-<app-navbar (collapse)="toggleSidenav()"></app-navbar>
-<mat-sidenav-container>
-  <mat-sidenav #sidenav mode="side" opened class="example-sidenav"
-               [fixedInViewport]="true" [fixedTopGap]="64"
-               [fixedBottomGap]="0">
-    <app-sidenav [collapsed]="sidenavCollapsed"></app-sidenav>
-  </mat-sidenav>
+<div id="restricted-component" class="content" [class.is-mobile]="mobileQuery.matches">
+  <app-navbar [isMobile]="mobileQuery.matches" (toggle)="sidenav.toggle()" class="navbar"></app-navbar>
+  <mat-sidenav-container class="sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 64 : 0">
+    <mat-sidenav #sidenav [mode]="mobileQuery.matches ? 'over' : 'side'" [opened]="!mobileQuery.matches"
+                [fixedInViewport]="mobileQuery.matches" [fixedTopGap]="64"
+                [fixedBottomGap]="0">
+      <app-sidenav [isMobile]="mobileQuery.matches"></app-sidenav>
+    </mat-sidenav>
 
-  <mat-sidenav-content>
-    <div class="container-fluid">
-      <router-outlet></router-outlet>
-    </div>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+    <mat-sidenav-content>
+      <div class="container-fluid">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

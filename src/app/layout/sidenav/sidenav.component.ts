@@ -7,8 +7,7 @@ import { Route } from './route';
   styleUrls: ['./sidenav.component.scss']
 })
 export class SidenavComponent implements OnInit {
-  @Input() collapsed = false;
-
+  @Input() isMobile = false;
   routes: Route[] = [
     {
       path: 'time-track/fill',
@@ -36,5 +35,4 @@ export class SidenavComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

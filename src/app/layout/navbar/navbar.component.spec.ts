@@ -45,13 +45,13 @@ describe('NavbarComponent', () => {
     expect(authSpy.logout).toHaveBeenCalled();
   });
 
-  it('should emit collapse event', () => {
-    spyOn(component.collapse, 'emit');
+  it('should emit toggle event', () => {
+    spyOn(component.toggle, 'emit');
 
-    const toggleButton = fixture.debugElement.query(By.css('.toggle-btn'));
+    const toggleButton = fixture.debugElement.query(By.css('.toggle-button'));
     toggleButton.triggerEventHandler('click', {});
     fixture.detectChanges();
 
-    expect(component.collapse.emit).toHaveBeenCalled();
+    expect(component.toggle.emit).toHaveBeenCalled();
   });
 });

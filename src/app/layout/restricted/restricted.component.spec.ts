@@ -8,11 +8,13 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { RestrictedComponent } from './restricted.component';
 
 @Component({selector: 'app-navbar', template: ''})
-class NavbarStubComponent {}
+class NavbarStubComponent {
+  @Input() isMobile = false;
+}
 
 @Component({selector: 'app-sidenav', template: ''})
 class SidenavStubComponent {
-  @Input() collapsed = false;
+  @Input() isMobile = false;
 }
 
 describe('RestrictedComponent', () => {
@@ -44,13 +46,5 @@ describe('RestrictedComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
-
-  it('should toggle the side nav', () => {
-    expect(component.sidenavCollapsed).toBe(false);
-
-    component.toggleSidenav();
-
-    expect(component.sidenavCollapsed).toBe(true);
   });
 });

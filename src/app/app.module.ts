@@ -1,3 +1,4 @@
+import { LayoutModule as CdkLayoutModule} from '@angular/cdk/layout';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -22,6 +23,7 @@ import { LayoutModule } from './layout/layout.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    CdkLayoutModule,
     HttpClientModule,
     AuthModule,
     CoreModule,

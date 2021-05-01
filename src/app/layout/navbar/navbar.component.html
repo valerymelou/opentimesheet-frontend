@@ -1,10 +1,10 @@
 <mat-toolbar color="primary">
-  <button mat-icon-button class="toggle-btn" i18n-aria-label aria-label="Collapse menu" (click)="toggleMenu()">
+  <button mat-icon-button class="toggle-button" i18n-aria-label aria-label="Collapse menu" (click)="toggleMenu()">
     <mat-icon>menu</mat-icon>
   </button>
   <span>Open Timesheet</span>
   <span class="spacer"></span>
-  <a href="" mat-flat-button color="primary">
+  <a href="" mat-flat-button color="primary" *ngIf="!isMobile">
     <mat-icon>settings</mat-icon>
     <span i18n>Settings</span>
   </a>

@@ -1,18 +1,23 @@
-<mat-nav-list [class]="{'collapsed': collapsed}">
+<mat-nav-list>
   <a mat-list-item routerLink="time-track/fill" [routerLinkActive]="'active'">
     <mat-icon matListIcon>timelapse</mat-icon>
-    <span *ngIf="!collapsed" i18n>Time-Track</span>
+    <span i18n>Time-Track</span>
   </a>
   <a mat-list-item routerLink="tasks" [routerLinkActive]="'active'">
     <mat-icon matListIcon>task</mat-icon>
-    <span *ngIf="!collapsed" i18n>Tasks & projects</span>
+    <span i18n>Tasks & projects</span>
   </a>
   <a mat-list-item routerLink="reports" [routerLinkActive]="'active'">
     <mat-icon matListIcon>analytics</mat-icon>
-    <span *ngIf="!collapsed" i18n>Reports</span>
+    <span i18n>Reports</span>
   </a>
   <a mat-list-item routerLink="users" [routerLinkActive]="'active'">
     <mat-icon matListIcon>group</mat-icon>
-    <span *ngIf="!collapsed" i18n>Users</span>
+    <span i18n>Users</span>
+  </a>
+  <mat-divider *ngIf="isMobile"></mat-divider>
+  <a mat-list-item routerLink="settings" [routerLinkActive]="'active'" *ngIf="isMobile">
+    <mat-icon matListIcon>settings</mat-icon>
+    <span i18n>Settings</span>
   </a>
 </mat-nav-list>

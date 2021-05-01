@@ -7,7 +7,7 @@
       </div>
       <div class="column column-8 no-padding">
         <form (submit)="submit()">
-          <h2 class="mat-title" i18n>Please sign in</h2>
+          <h2 class="mat-title">Please sign in</h2>
           <div class="form-errors">
             <p *ngFor="let error of errors">
               {{ error.detail }}
@@ -15,21 +15,21 @@
           </div>
           <div class="form-group">
             <mat-form-field>
-              <mat-label i18n>Email address</mat-label>
+              <mat-label>Email address</mat-label>
               <input type="email" [(ngModel)]="credentials.email" name="email" matInput autofocus>
             </mat-form-field>
           </div>
           <div class="form-group">
             <mat-form-field>
-              <mat-label i18n>Password</mat-label>
+              <mat-label>Password</mat-label>
               <input type="password" [(ngModel)]="credentials.password" name="password" matInput>
               <mat-hint>
-                <a routerLink="/reset-password" i18n>Forgot password?</a>
+                <a routerLink="/reset-password">Forgot password?</a>
               </mat-hint>
             </mat-form-field>
           </div>
           <div class="form-group">
-            <button type="submit" mat-raised-button color="primary" i18n [disabled]="loading">Sign in</button>
+            <button type="submit" mat-raised-button color="primary" [disabled]="loading">Sign in</button>
           </div>
         </form>
       </div>

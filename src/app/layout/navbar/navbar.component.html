@@ -1,5 +1,5 @@
 <mat-toolbar>
-  <button color="primary" mat-icon-button class="toggle-button" i18n-aria-label aria-label="Collapse menu" (click)="toggleMenu()">
+  <button color="primary" mat-icon-button class="toggle-button" aria-label="Collapse menu" (click)="toggleMenu()">
     <mat-icon>menu</mat-icon>
   </button>
   <h1 class="mat-h1">
@@ -8,17 +8,17 @@
   <span class="spacer"></span>
   <a href="" mat-button color="primary" *ngIf="!isMobile">
     <mat-icon>settings</mat-icon>
-    <span i18n>Settings</span>
+    <span>Settings</span>
   </a>
   <button mat-flat-button [matMenuTriggerFor]="menu" color="primary">
     <mat-icon>account_circle</mat-icon>
     <span>John Doe</span>
   </button>
   <mat-menu #menu="matMenu">
-    <a href="" mat-menu-item i18n>My profile</a>
+    <a href="" mat-menu-item>My profile</a>
     <button mat-menu-item (click)="logout()">
       <mat-icon>logout</mat-icon>
-      <span i18n>Logout</span>
+      <span>Logout</span>
     </button>
   </mat-menu>
 </mat-toolbar>

@@ -17,7 +17,7 @@ import { CoreModule } from './core/core.module';
 import { HttpBaseHeadersInterceptor } from './core/http/http-base-headers.interceptor';
 import { LayoutModule } from './layout/layout.module';
 
-export function HttpLoaderFactory(http: HttpClient) {
+export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http);
 }
 

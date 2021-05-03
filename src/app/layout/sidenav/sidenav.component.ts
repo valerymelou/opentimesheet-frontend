@@ -7,32 +7,30 @@ import { Route } from './route';
   styleUrls: ['./sidenav.component.scss']
 })
 export class SidenavComponent implements OnInit {
-  @Input() isMobile = false;
   routes: Route[] = [
     {
       path: 'time-track/fill',
       icon: 'timelapse',
-      label: 'Time-Track'
+      label: 'LINK.TIME-TRACK',
     },
     {
       path: 'tasks',
       icon: 'task',
-      label: 'Tasks & projects'
+      label: 'LINK.TASKS',
     },
     {
       path: 'reports',
       icon: 'analytics',
-      label: 'Reports'
+      label: 'LINK.REPORTS',
     },
     {
       path: 'users',
       icon: 'group',
-      label: 'Users'
+      label: 'LINK.USERS',
     }
   ];
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 }

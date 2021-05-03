@@ -17,6 +17,8 @@ mat-nav-list {
 }
 
 .mat-list-item {
+  color: mat-color($opentimesheet-primary);
+
   &.active {
     color: #fff;
     background-color: mat-color($opentimesheet-primary);

@@ -1,4 +1,3 @@
-import { not } from '@angular/compiler/src/output/output_ast';
 import { Component } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
@@ -7,6 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { By } from '@angular/platform-browser';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ActivatedRoute, Router } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 import { of, throwError } from 'rxjs';
 import { AuthService } from '../auth.service';
 import { Token } from '../token';
@@ -32,7 +32,8 @@ describe('LoginComponent', async () => {
         MatFormFieldModule,
         MatInputModule,
         NoopAnimationsModule,
-        FormsModule
+        FormsModule,
+        TranslateModule.forRoot()
       ],
       providers: [
         {

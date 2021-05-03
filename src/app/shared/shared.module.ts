@@ -11,6 +11,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { TitleComponent } from './title/title.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 
@@ -31,6 +32,7 @@ import { TitleComponent } from './title/title.component';
     // Components
     AboutComponent,
     TitleComponent,
+    TranslateModule
   ],
   imports: [
     CommonModule,
@@ -43,6 +45,7 @@ import { TitleComponent } from './title/title.component';
     MatMenuModule,
     MatToolbarModule,
     MatSidenavModule,
+    TranslateModule,
   ]
 })
 export class SharedModule { }

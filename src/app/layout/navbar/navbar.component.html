@@ -1,18 +1,18 @@
 <mat-toolbar>
-  <button color="primary" mat-icon-button class="toggle-button" aria-label="Collapse menu" (click)="toggleMenu()">
+  <button color="primary" mat-icon-button class="toggle-button" [attr.aria-label]="'BUTTON.TOGGLE_MENU' | translate" (click)="toggleMenu()">
     <mat-icon>menu</mat-icon>
   </button>
   <h1 class="mat-h1">
     <a routerLink="time-track/fill" class="home-link">Open Timesheet</a>
   </h1>
   <span class="spacer"></span>
-  <a href="" mat-button color="primary" *ngIf="!isMobile">
+  <a href="" mat-button color="primary" [attr.aria-label]="isMobile ? ('LINK.SETTINGS'|translate) : ''">
     <mat-icon>settings</mat-icon>
-    <span>Settings</span>
+    <span *ngIf="!isMobile">{{ 'LINK.SETTINGS'|translate }}</span>
   </a>
-  <button mat-flat-button [matMenuTriggerFor]="menu" color="primary">
+  <button mat-flat-button [matMenuTriggerFor]="menu" color="primary" [attr.aria-label]="isMobile ? ('LINK.SETTINGS'|translate) : ''">
     <mat-icon>account_circle</mat-icon>
-    <span>John Doe</span>
+    <span *ngIf="!isMobile">John Doe</span>
   </button>
   <mat-menu #menu="matMenu">
     <a href="" mat-menu-item>My profile</a>

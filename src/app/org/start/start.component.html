@@ -6,39 +6,39 @@
       </div>
       <div class="column column-8 no-padding">
         <form>
-          <h2 class="mat-title">Start using Open Timesheet today</h2>
+          <h2 class="mat-title">{{ 'TITLE.START_USING_TODAY'|translate }}</h2>
           <div class="form-group">
             <mat-form-field>
-              <mat-label>First name</mat-label>
-              <input type="text" matInput placeholder="Enter your first name">
+              <mat-label>{{ 'LABEL.FIRST_NAME'|translate }}</mat-label>
+              <input type="text" matInput [placeholder]="'PLACEHOLDER.FIRST_NAME'|translate">
             </mat-form-field>
           </div>
           <div class="form-group">
             <mat-form-field>
-              <mat-label>Last name</mat-label>
-              <input type="text" matInput placeholder="Enter your last name">
+              <mat-label>{{ 'LABEL.LAST_NAME'|translate }}</mat-label>
+              <input type="text" matInput [placeholder]="'PLACEHOLDER.LAST_NAME'|translate">
             </mat-form-field>
           </div>
           <div class="form-group">
             <mat-form-field>
-              <mat-label>Email address</mat-label>
-              <input type="email" matInput placeholder="Enter your email address">
+              <mat-label>{{ 'LABEL.EMAIL_ADDRESS'|translate }}</mat-label>
+              <input type="email" matInput [placeholder]="'PLACEHOLDER.EMAIL_ADDRESS'|translate">
             </mat-form-field>
           </div>
           <div class="form-group">
             <mat-form-field>
-              <mat-label>Password</mat-label>
-              <input type="password" matInput placeholder="Enter your password">
+              <mat-label>{{ 'LABEL.PASSWORD'|translate }}</mat-label>
+              <input type="password" matInput [placeholder]="'PLACEHOLDER.PASSWORD'|translate">
             </mat-form-field>
           </div>
           <div class="form-group">
             <mat-form-field>
-              <mat-label>Confirm password</mat-label>
-              <input type="password" matInput placeholder="Enter your password again">
+              <mat-label>{{ 'LABEL.CONFIRM_PASSWORD'|translate }}</mat-label>
+              <input type="password" matInput [placeholder]="'PLACEHOLDER.CONFIRM_PASSWORD'|translate">
             </mat-form-field>
           </div>
           <div class="form-group">
-            <button type="submit" mat-raised-button color="primary">Create my account</button>
+            <button type="submit" mat-raised-button color="primary">{{ 'BUTTON.CREATE_MY_ACCOUNT'|translate }}</button>
           </div>
         </form>
       </div>

@@ -1,9 +1,11 @@
 import { LayoutModule as CdkLayoutModule} from '@angular/cdk/layout';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +16,10 @@ import { HttpBaseUrlInterceptor } from './core/http/http-base-url.interceptor';
 import { CoreModule } from './core/core.module';
 import { HttpBaseHeadersInterceptor } from './core/http/http-base-headers.interceptor';
 import { LayoutModule } from './layout/layout.module';
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -29,7 +35,15 @@ import { LayoutModule } from './layout/layout.module';
     CoreModule,
     OrgModule,
     LayoutModule,
-    SharedModule
+    SharedModule,
+    TranslateModule.forRoot({
+      defaultLanguage: 'en',
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [
     {

@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+import { TranslateModule } from '@ngx-translate/core';
 import { AuthService } from 'src/app/auth/auth.service';
 import { SharedModule } from 'src/app/shared/shared.module';
 
@@ -16,7 +17,8 @@ describe('NavbarComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ NavbarComponent],
       imports: [
-        SharedModule
+        SharedModule,
+        TranslateModule.forRoot()
       ],
       providers: [
         {
@@ -55,3 +57,5 @@ describe('NavbarComponent', () => {
     expect(component.toggle.emit).toHaveBeenCalled();
   });
 });
+
+

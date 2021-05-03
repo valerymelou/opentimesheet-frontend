@@ -1,0 +1,39 @@
+{
+  "BUTTON": {
+    "CREATE_MY_ACCOUNT": "Create my account",
+    "SIGN_IN": "Sign in",
+    "TOGGLE_MENU": "Toggle menu"
+  },
+  "HEADLINE": {
+    "APP_NAME": "Open Source Timesheet Management"
+  },
+  "LABEL": {
+    "CONFIRM_PASSWORD": "Confirm password",
+    "EMAIL_ADDRESS": "Email address",
+    "FIRST_NAME": "First name",
+    "LAST_NAME": "Last name",
+    "PASSWORD": "Password"
+  },
+  "LINK": {
+    "CONTRIBUTORS": "Contributors",
+    "FORGOT_PASSWORD": "Forgot password",
+    "LICENSE": "License",
+    "REPORTS": "Reports",
+    "SETTINGS": "Settings",
+    "TIME-TRACK": "Time-Track",
+    "TASKS": "Tasks",
+    "USERS": "Users",
+    "VERSION": "Version {{value}}"
+  },
+  "PLACEHOLDER": {
+    "EMAIL_ADDRESS": "Enter your email address",
+    "FIRST_NAME": "Enter your last name",
+    "LAST_NAME": "Enter your last name",
+    "CONFIRM_PASSWORD": "Enter your password again",
+    "PASSWORD": "Enter your password"
+  },
+  "TITLE": {
+    "SIGN_IN": "Please sign in",
+    "START_USING_TODAY": "Start using Open Timesheet today!"
+  }
+}

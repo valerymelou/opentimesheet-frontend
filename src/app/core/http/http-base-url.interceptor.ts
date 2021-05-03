@@ -15,7 +15,7 @@ export class HttpBaseUrlInterceptor implements HttpInterceptor {
   constructor(private orgService: OrgService) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    if (request.url.startsWith('http')) {
+    if (request.url.startsWith('http') || request.url.indexOf('/assets/i18n/') !== -1) {
       return next.handle(request);
     }
 

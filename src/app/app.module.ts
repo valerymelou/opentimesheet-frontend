@@ -16,6 +16,7 @@ import { HttpBaseUrlInterceptor } from './core/http/http-base-url.interceptor';
 import { CoreModule } from './core/core.module';
 import { HttpBaseHeadersInterceptor } from './core/http/http-base-headers.interceptor';
 import { LayoutModule } from './layout/layout.module';
+import { AuthInterceptor } from './auth/auth.interceptor';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http);
@@ -49,6 +50,11 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     {
       provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
       useValue: { appearance: 'outline' }
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
     },
     {
       provide: HTTP_INTERCEPTORS,

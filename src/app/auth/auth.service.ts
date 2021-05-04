@@ -1,19 +1,18 @@
-import { HttpClient, HttpErrorResponse, HttpResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of, throwError } from 'rxjs';
+import { Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import jwtDecode from 'jwt-decode';
 import { environment } from 'src/environments/environment';
+import { BaseHttpService } from '../core/http/base-http.service';
 import { StorageService } from '../core/storage/storage.service';
 import { Credentials } from './credentials';
 import { Token } from './token';
-import { HttpError } from '../core/http/http-error';
-import { BaseService } from '../core/base-service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService extends BaseService {
+export class AuthService extends BaseHttpService {
   private url = '/auth';
   private state: any = null;
   private accessToken?: string;
@@ -27,7 +26,7 @@ export class AuthService extends BaseService {
   }
 
   authenticate(credentials: Credentials): Observable<Token> {
-    return this.http.post<Token>(`${this.url}/token`, credentials.stringify()).pipe(
+    return this.http.post<Token>(`${this.url}/token`, credentials.serialize()).pipe(
       map((response: any) => {
         const token = new Token();
 
@@ -107,5 +106,13 @@ export class AuthService extends BaseService {
     this.refreshToken = refresh;
 
     return true;
+  }
+
+  getAccessToken(): string {
+    if (this.accessToken) {
+      return this.accessToken;
+    }
+
+    return '';
   }
 }

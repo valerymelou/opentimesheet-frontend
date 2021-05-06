@@ -19,26 +19,26 @@ describe('BaseModel', () => {
     expect(new BaseModel()).toBeTruthy();
   });
 
-  it('should stringify without id and type', () => {
+  it('should serialize without id and type', () => {
     const model = new TestModel();
     model.name = 'Test';
 
-    expect(model.stringify()).toEqual('{"data":{"attributes":{"name":"Test"}}}');
+    expect(model.serialize()).toEqual('{"data":{"attributes":{"name":"Test"}}}');
   });
 
-  it('should stringify with falsy values of id and type', () => {
+  it('should serialize with falsy values of id and type', () => {
     const model = new TestUnTypedModel();
     model.name = 'Test';
     model.id = undefined;
 
-    expect(model.stringify()).toEqual('{"data":{"attributes":{"name":"Test"}}}');
+    expect(model.serialize()).toEqual('{"data":{"attributes":{"name":"Test"}}}');
   });
 
-  it('should stringify with id and type', () => {
+  it('should serialize with id and type', () => {
     const model = new TestTypedModel();
     model.name = 'Test';
     model.id = '1234';
 
-    expect(model.stringify()).toEqual('{"data":{"attributes":{"name":"Test"},"type":"TestType","id":"1234"}}');
+    expect(model.serialize()).toEqual('{"data":{"attributes":{"name":"Test"},"type":"TestType","id":"1234"}}');
   });
 });

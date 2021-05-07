@@ -1,6 +1,9 @@
 {
   "BUTTON": {
+    "ADD_NEW": "Add new",
     "CREATE_MY_ACCOUNT": "Create my account",
+    "NEW_CUSTOMER": "New customer",
+    "NEW_PROJECT": "New project",
     "SIGN_IN": "Sign in",
     "TOGGLE_MENU": "Toggle menu"
   },
@@ -33,7 +36,9 @@
     "PASSWORD": "Enter your password"
   },
   "TITLE": {
+    "CUSTOMERS_AND_PROJECTS": "Customers & projects",
     "SIGN_IN": "Please sign in",
-    "START_USING_TODAY": "Start using Open Timesheet today!"
+    "START_USING_TODAY": "Start using Open Timesheet today!",
+    "TASKS": "Tasks"
   }
 }

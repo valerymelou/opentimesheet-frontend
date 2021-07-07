@@ -2,7 +2,7 @@ export class BaseModel {
   readonly type?: string;
   public id?: string;
 
-  public stringify(): string {
+  public serialize(): string {
     const resource: any = {
       data: {
         attributes: {}

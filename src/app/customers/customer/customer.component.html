@@ -1,0 +1,10 @@
+<mat-expansion-panel *ngIf="customer" (afterExpand)="getProjects()">
+  <mat-expansion-panel-header>
+    <mat-panel-title>{{ customer.name }}</mat-panel-title>
+  </mat-expansion-panel-header>
+  <mat-list class="projects-list">
+    <mat-list-item *ngFor="let project of projects.data" (click)="selectProject($event, project)">
+      <app-project [project]="project"></app-project>
+    </mat-list-item>
+  </mat-list>
+</mat-expansion-panel>

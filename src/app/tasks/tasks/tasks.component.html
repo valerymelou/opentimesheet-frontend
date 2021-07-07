@@ -1,0 +1,12 @@
+<div id="tasks-component">
+  <app-title [title]="'TITLE.TASKS'|translate"></app-title>
+  <div class="row">
+    <div class="column-4">
+      <app-customers-and-projects (selected)="onSelected($event)"></app-customers-and-projects>
+    </div>
+    <div class="column-8">
+      <h3 *ngIf="selectedCustomer">{{ selectedCustomer.name }}</h3>
+      <h3 *ngIf="selectedProject">{{ selectedProject.name }}</h3>
+    </div>
+  </div>
+</div>

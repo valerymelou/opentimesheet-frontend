@@ -1,0 +1,24 @@
+<div id="customers-and-projects-component">
+  <mat-toolbar class="mat-elevation-z0">
+    <h3 class="mat-subheading-2">{{ 'TITLE.CUSTOMERS_AND_PROJECTS'|translate }}</h3>
+    <span class="spacer"></span>
+    <button mat-raised-button color="primary" [matMenuTriggerFor]="newItemsMenu">
+      <mat-icon>add</mat-icon>
+      {{ 'BUTTON.ADD_NEW'|translate }}
+    </button>
+    <mat-menu #newItemsMenu="matMenu" xPosition="before">
+      <button mat-menu-item>
+        <mat-icon>person</mat-icon>
+        {{ 'BUTTON.NEW_CUSTOMER'|translate }}
+      </button>
+      <button mat-menu-item>
+        <mat-icon>work</mat-icon>
+        {{ 'BUTTON.NEW_PROJECT'|translate }}
+      </button>
+    </mat-menu>
+  </mat-toolbar>
+
+  <mat-accordion displayMode="flat" hideToggle="true" class="mat-elevation-z0">
+    <app-customer *ngFor="let customer of customers.data" [customer]="customer" (click)="onSelected(customer)" (selected)="onSelected($event)"></app-customer>
+  </mat-accordion>
+</div>

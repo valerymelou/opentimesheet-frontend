@@ -1,9 +1,9 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { throwError } from 'rxjs/internal/observable/throwError';
-import { HttpError } from './http/http-error';
+import { HttpError } from './http-error';
 
-export class BaseService {
+export class BaseHttpService {
   protected handleError(error: HttpErrorResponse): Observable<HttpError[] | any> {
     let httpErrors: HttpError[] = [];
 

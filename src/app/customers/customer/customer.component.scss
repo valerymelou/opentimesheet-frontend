@@ -1,0 +1,17 @@
+app-project {
+  width: 100%;
+}
+
+.projects-list {
+  padding-top: 0;
+
+  mat-list-item {
+    transition: all .2s ease-in-out;
+
+    &.active,
+    &:hover,
+    &:focus {
+      background-color: whitesmoke;
+    }
+  }
+}
